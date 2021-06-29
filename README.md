@@ -2,7 +2,7 @@
 A published example case for the global impurity transport code.
 The paper in which this example is documented can be found here: https://www.sciencedirect.com/science/article/abs/pii/S0010465521000369
 
-
+<img src="images/DepTracks2.png " width="500">
 
 ## How to run
 After the GITR code is built:
@@ -21,15 +21,21 @@ yield particle tracks, charge-resolved volumetric density histograms, surface er
 deposition, sputtering and reflection maps,
 and energy-angle distributions at the surface. Returning to the analytical example of Surface Model and Particle balance
 where grossDeposition = nP ∗ 1−R = 1−(Y +R)
-1.25e5 the GITR result predicts a value of 1.24997e5. This value is in very close
+1.25e5 the GITR result predicts a value of 1.24997e5. This value is in very close in agreement, in which the difference can be attributed to the accumulation of machine adding accumulated error.
  
- Figure 10: GITR example case simulated geometry with side cut away. Gross deposited mass rate (colored surfaces) and example particle tracks (red lines) are shown.
-agreement, in which the difference can be attributed to the accumulation of machine adding accumulated error. When binning or summing to infinity as is done in Equation 9, if the difference in bin size (grossDeposition) and the current particle weight differs by more than the precision being used, the weight will not be effectively added to the bin, thus truncating the sum before infinity. In most cases, the accuracy of these opera- tions can be alleviated by increasing the fi- delity of the bin size (either surface or vol- ume). This reduces the magnitude of the to- tal size of the bin and reduces the error in adding small weights to the bins.
+ 
+<img src="images/dep.png " width="500"> 
+Figure 10: GITR example case simulated geometry with side cut away. Gross deposited mass rate (colored surfaces) and example particle tracks (red lines) are shown.
+ 
+When binning or summing to infinity as is done in Equation 9, if the difference in bin size (grossDeposition) and the current particle weight differs by more than the precision being used, the weight will not be effectively added to the bin, thus truncating the sum before infinity. In most cases, the accuracy of these operations can be alleviated by increasing the fidelity of the bin size (either surface or volume). This reduces the magnitude of the total size of the bin and reduces the error in adding small weights to the bins.
 Additional sample output from the GITR simulation is shown in Figures 11 and 12.
-Since all surface elements in the simulation are W material surfaces that are in contact with plasma, there exists a sheath electric field structure according to [16], which serves to accelerate simulated impurity ions toward the local surface. The total potential of the surface is set to be φ = 3kTe/e where k is the Boltzmann constant, Te is electron tempera- ture and e is the electron charge. Therefore ions entering the sheath can experience ac- celerations adding kinetic energy to the par- ticle of up to Qe(3kTe) where Q is the impu- rity ion charge number. Since some particles
-are ionized within the sheath region, in some cases, only a fraction of this potential energy is given to the impurity ion traveling back to the surface. The summed ion energy-angle distribution (IEAD) for all of the surfaces in the example problem is shown in Figure 11. This result demonstrates that impurity ion charges of approximately 1 to 6 are impacting the material surfaces with peaks correspond- ing to Qe(3kTe) (60, 120, 180, 240, 300, 360 eV). The surface IEAD demonstrates a tail of lower energy impacts which represent par- ticles that are ionized near the surface, only receiving a fraction of the sheath potential acceleration before striking the surface.
-Figure 11: GITR example case ion-surface impact energy- angle distribution summed over all surfaces.
-Another example of GITR simulation output is the W impurity ion density profile shown in Figure 12. This profile demonstrates the impurity density of all charge states averaged in the y-direction. The particle source loca- tion of z=0 and x=0 can be seen with re- spect to the surface plane plotted as a white line. It shows that the launch trajectory of the impurity atoms in the z-direction domi- nates the density profile with a peak several mm from the surface. There are tails of den- sity in the +/- x-direction demonstrating the confinement of particles to parallel transport along the magnetic field.
- 14
+Since all surface elements in the simulation are W material surfaces that are in contact with plasma, there exists a sheath electric field structure according to [16], which serves to accelerate simulated impurity ions toward the local surface. The total potential of the surface is set to be φ = 3kTe/e where k is the Boltzmann constant, Te is electron temperature and e is the electron charge. Therefore ions entering the sheath can experience accelerations adding kinetic energy to the particle of up to Qe(3kTe) where Q is the impurity ion charge number. Since some particles
+are ionized within the sheath region, in some cases, only a fraction of this potential energy is given to the impurity ion traveling back to the surface. The summed ion energy-angle distribution (IEAD) for all of the surfaces in the example problem is shown in Figure 11. This result demonstrates that impurity ion charges of approximately 1 to 6 are impacting the material surfaces with peaks corresponding to Qe(3kTe) (60, 120, 180, 240, 300, 360 eV). The surface IEAD demonstrates a tail of lower energy impacts which represent particles that are ionized near the surface, only receiving a fraction of the sheath potential acceleration before striking the surface.
 
+<img src="images/iead.png " width="500">
+Figure 11: GITR example case ion-surface impact energy-angle distribution summed over all surfaces.
+
+Another example of GITR simulation output is the W impurity ion density profile shown in Figure 12. This profile demonstrates the impurity density of all charge states averaged in the y-direction. The particle source location of z=0 and x=0 can be seen with respect to the surface plane plotted as a white line. It shows that the launch trajectory of the impurity atoms in the z-direction dominates the density profile with a peak several mm from the surface. There are tails of density in the +/- x-direction demonstrating the confinement of particles to parallel transport along the magnetic field.
+
+<img src="images/dens.png " width="500">
   Figure 12: GITR example case in which the W density profile (summed over all charge states) is integrated over y-domain.

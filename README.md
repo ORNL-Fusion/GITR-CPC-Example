@@ -2,6 +2,8 @@
 A published example case for the global impurity transport code.
 The paper in which this example is documented can be found here: https://www.sciencedirect.com/science/article/abs/pii/S0010465521000369
 
+
+
 ## How to run
 After the GITR code is built:
 ```
@@ -12,18 +14,15 @@ mkdir output
 ```
 
 ## Example Details
-An example case to demonstrate GITR and the code outputs is now presented. This example has some features that are relevant to fusion erosion scenarios but is also simpli- fied for demonstration purposes and satisfies the description given previously in Section 5: Surface Model and Particle Balance. In this case a D plasma (mass=2 AMU charge=1) withTi =Te =20eV andni =ne =1e19m−3 fills the geometry made up of a plane angled at 30 degrees with respect to a y-z plane and passing through the origin. Connecting walls
-at x=+-1.5cm, y=+-1.5cm and z=3cm com- plete the closed geometry. The mesh resolu- tion is set to 3 mm, and the surface geome- try is comprised of 1280 boundary and sur- face (triangle) elements in which all bound- aries are W material surfaces. This 3D sur- face geometry is depicted in Figure 10. The magnetic field is fixed to 2 Tesla in the x- direction. Ionization by electron impact is switched on using coefficients from the ADAS database [9]. The sheath electric field is ap- plied according to the model specified in ref- erence [16]. A simple surface model for reflec- tion (R=0.5) and sputtering yield (Y=0.1) are used where any sputtered/reflected par- ticle leaves the surface with 8 eV of en- ergy, an azimuthal angle of φ = 45 deg and θ = ξ∗360deg where ξ is a random num- ber between 0 and 1. The initial source of eroded particles is a point source at the ori- gin with energy in the z-direction of 10 eV with a magnitude set to 1 particle per second and with nP=1e5 particles. Therefore, each computational particle represents 1e-5 physi- cal particles per second. A time-step of 1e-10 s is used for 1e7 time steps for a simulated time of 1 ms. The problem has particles that are launched vertically (in the z-direction), which are ionized and then follow gyromotion orbits before accelerating back to the surface where the particles sputter and reflect to be launched from the surface again. The parti- cles are weighted according to each process, and the weights are accounted for in binning for densities of impurities as well as impacts on the material surface.
+An example case to demonstrate GITR and the code outputs is now presented. This example has some features that are relevant to fusion erosion scenarios but is also simplified for demonstration purposes and satisfies the description given previously in Section 5: Surface Model and Particle Balance. In this case a D plasma (mass=2 AMU charge=1) withTi =Te =20eV andni =ne =1e19m−3 fills the geometry made up of a plane angled at 30 degrees with respect to a y-z plane and passing through the origin. Connecting walls
+at x=+-1.5cm, y=+-1.5cm and z=3cm complete the closed geometry. The mesh resolution is set to 3 mm, and the surface geometry is comprised of 1280 boundary and surface (triangle) elements in which all boundaries are W material surfaces. This 3D surface geometry is depicted in Figure 10. The magnetic field is fixed to 2 Tesla in the x-direction. Ionization by electron impact is switched on using coefficients from the ADAS database [9]. The sheath electric field is applied according to the model specified in reference [16]. A simple surface model for reflection (R=0.5) and sputtering yield (Y=0.1) are used where any sputtered/reflected particle leaves the surface with 8 eV of energy, an azimuthal angle of φ = 45 deg and θ = ξ∗360deg where ξ is a random number between 0 and 1. The initial source of eroded particles is a point source at the origin with energy in the z-direction of 10 eV with a magnitude set to 1 particle per second and with nP=1e5 particles. Therefore, each computational particle represents 1e-5 physical particles per second. A time-step of 1e-10 s is used for 1e7 time steps for a simulated time of 1 ms. The problem has particles that are launched vertically (in the z-direction), which are ionized and then follow gyromotion orbits before accelerating back to the surface where the particles sputter and reflect to be launched from the surface again. The particles are weighted according to each process, and the weights are accounted for in binning for densities of impurities as well as impacts on the material surface.
 Typical results of such a simulation can
-yield particle tracks, charge-resolved volu-
-metric density histograms, surface erosion,
+yield particle tracks, charge-resolved volumetric density histograms, surface erosion,
 deposition, sputtering and reflection maps,
-and energy-angle distributions at the sur-
-face. Returning to the analytical exam-
-ple of Surface Model and Particle balance
+and energy-angle distributions at the surface. Returning to the analytical example of Surface Model and Particle balance
 where grossDeposition = nP ∗ 1−R = 1−(Y +R)
 1.25e5 the GITR result predicts a value of 1.24997e5. This value is in very close
-  13
+ 
  Figure 10: GITR example case simulated geometry with side cut away. Gross deposited mass rate (colored surfaces) and example particle tracks (red lines) are shown.
 agreement, in which the difference can be attributed to the accumulation of machine adding accumulated error. When binning or summing to infinity as is done in Equation 9, if the difference in bin size (grossDeposition) and the current particle weight differs by more than the precision being used, the weight will not be effectively added to the bin, thus truncating the sum before infinity. In most cases, the accuracy of these opera- tions can be alleviated by increasing the fi- delity of the bin size (either surface or vol- ume). This reduces the magnitude of the to- tal size of the bin and reduces the error in adding small weights to the bins.
 Additional sample output from the GITR simulation is shown in Figures 11 and 12.

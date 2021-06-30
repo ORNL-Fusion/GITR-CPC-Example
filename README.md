@@ -5,12 +5,18 @@ The paper in which this example is documented can be found here: https://www.sci
 <img src="images/DepTracks2.png " width="500">
 
 ## How to run
-After the GITR code is built:
 ```
+git clone https://github.com/ORNL-Fusion/GITR.git
+cd GITR
+mkdir build
+cd build
+cmake ..
+make -j
+cd ../../
 git clone https://github.com/ORNL-Fusion/GITR-CPC-Example.git
 cd GITR-CPC-Example
 mkdir output
-/path/to/executable/GITR
+../GITR/build/GITR
 ```
 
 ## Example Details
